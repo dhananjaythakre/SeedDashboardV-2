@@ -113,6 +113,7 @@ button.new-user-button {
   padding: 3px 20px !important;
   margin-top: 5px;
 }
+.page-link{color: #000000 !important;}
 
 .pagination .active > .page-link,
 .pagination .page-link.active {
@@ -120,6 +121,7 @@ button.new-user-button {
   color: var(--bs-pagination-active-color);
   background-color: #699e84;
   border: #699e84;
+  color: #fff !important;
 }
 
 /* Add User CSS */
