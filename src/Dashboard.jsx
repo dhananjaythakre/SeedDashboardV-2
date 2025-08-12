@@ -213,86 +213,83 @@ function Dashboard() {
         style={{ borderRadius: "15px", background: "rgba(255, 255, 255, 0.5)" }}
       >
         <Card.Body>
-          <Row className="mb-3 gy-2">
-            {/* Title */}
-            <Col xs={12} md={5}
-              className="d-flex align-items-center report-title fw-bold"
-            >
+          <Row className="mb-3 gy-2 align-items-center">
+            {/* Left column: Title */}
+            <Col xs={12} md={4} className="fw-bold report-title">
               Seed Collection Report
             </Col>
 
-            {/* From Date */}
-            <Col xs={12} md={7}>
-            <Row>
-            <Col
-              xs={12}
-              sm={6}
-              md={3}
-              className="d-flex align-items-center gap-2"
-            >
-              <label htmlFor="fromDate" className="mb-0">
-                From
-              </label>
-              <Form.Control
-                type="date"
-                id="fromDate"
-                className="no-default-icon"
-                value={fromDate}
-                onChange={handleFromDateChange}
-              />
-            </Col>
-
-            {/* To Date */}
-            <Col
-              xs={12}
-              sm={6}
-              md={3}
-              className="d-flex align-items-center gap-2"
-            >
-              <label htmlFor="toDate" className="mb-0">
-                To
-              </label>
-              <Form.Control
-                type="date"
-                id="toDate"
-                className="no-default-icon"
-                value={toDate}
-                onChange={handleToDateChange}
-              />
-            </Col>
-
-            {/* Search Button */}
-            <Col xs={12} sm={6} md={3} className="d-flex align-items-center ">
-              <Button className="greenbg" onClick={filterDataByDate}>
-                Search Report{" "}
-                <Icon icon="codex:search" width="20" height="20" />
-              </Button>
-            </Col>
-
-            {/* Export Buttons */}
-            <Col
-              xs={12}
-              sm={6}
-              md={3}
-              className="d-flex align-items-center gap-2 export-listing"
-            >
-              <Dropdown as={ButtonGroup} className="w-100">
-                <Dropdown.Toggle
-                  className="lightgreenbg"
-                  id="dropdown-export"
+            {/* Right column: Filters & Buttons */}
+            <Col xs={12} md={8}>
+              <Row className="gy-2 justify-content-md-end filter-row">
+                {/* From Date */}
+                <Col
+                  xs={12}
+                  sm={6}
+                  md={6}
+                  lg="auto"
+                  className="d-flex align-items-center gap-2 filter-item"
                 >
-                  Export <Icon icon="fe:export" width="18" height="18" />
-                </Dropdown.Toggle>
+                  <label htmlFor="fromDate" className="mb-0">
+                    From
+                  </label>
+                  <Form.Control
+                    type="date"
+                    id="fromDate"
+                    className="no-default-icon"
+                    value={fromDate}
+                    onChange={handleFromDateChange}
+                  />
+                </Col>
 
-                <Dropdown.Menu>
-                  <Dropdown.Item onClick={handleExportExcel}>
-                    Excel
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={handleExportPDF}>PDF</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>              
-            </Row>
+                {/* To Date */}
+                <Col
+                  xs={12}
+                  sm={6}
+                  md={6}
+                  lg="auto"
+                  className="d-flex align-items-center gap-2 filter-item"
+                >
+                  <label htmlFor="toDate" className="mb-0">
+                    To
+                  </label>
+                  <Form.Control
+                    type="date"
+                    id="toDate"
+                    className="no-default-icon"
+                    value={toDate}
+                    onChange={handleToDateChange}
+                  />
+                </Col>
+
+                {/* Search Button */}
+                <Col xs={12} sm={6} md={6} lg="auto" className="filter-item">
+                  <Button className="greenbg w-100" onClick={filterDataByDate}>
+                    Search Report{" "}
+                    <Icon icon="codex:search" width="20" height="20" />
+                  </Button>
+                </Col>
+
+                {/* Export Dropdown */}
+                <Col xs={12} sm={6} md={6} lg="auto" className="filter-item">
+                  <Dropdown as={ButtonGroup} className="w-100">
+                    <Dropdown.Toggle
+                      className="lightgreenbg w-100"
+                      id="dropdown-export"
+                    >
+                      Export <Icon icon="fe:export" width="18" height="18" />
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      <Dropdown.Item onClick={handleExportExcel}>
+                        Excel
+                      </Dropdown.Item>
+                      <Dropdown.Item onClick={handleExportPDF}>
+                        PDF
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </Col>
+              </Row>
             </Col>
           </Row>
 
@@ -324,10 +321,18 @@ function Dashboard() {
                         <ScientificName />
                       </th>
                       <th>Girth (in meters)</th>
-                      <th><RangeDropdown /></th>
-                      <th><RoundDropdown /></th>
-                      <th><BeatDropdown /></th>
-                      <th><CompartmentDropdown /></th>
+                      <th>
+                        <RangeDropdown />
+                      </th>
+                      <th>
+                        <RoundDropdown />
+                      </th>
+                      <th>
+                        <BeatDropdown />
+                      </th>
+                      <th>
+                        <CompartmentDropdown />
+                      </th>
                       <th>No of Seeds</th>
                       <th>Method</th>
                     </tr>
@@ -419,6 +424,7 @@ function Dashboard() {
           )}
         </Card.Body>
       </Card>
+      <div className="copyright text-end">Powered by, itCraft Technologies.Pvt.Ltd.</div>
     </Container>
   );
 }
