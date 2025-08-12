@@ -104,6 +104,9 @@
   border-top: transparent;
   vertical-align: text-top;
 }
+.btn-group .dropdown-toggle::after {
+    content: none;
+}
 /* Add New User CSS */
 button.new-user-button {
   color: #699e84 !important;
