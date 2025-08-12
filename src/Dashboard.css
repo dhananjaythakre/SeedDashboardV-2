@@ -48,7 +48,7 @@
 .dashboard-container input[type="date"] {
   font-size: 0.8rem;
   color: #b1b1b1;
-  background-image: url("../src/assets/img/uit--calender.svg") !important;
+  background-image: url("../src/assets/img/uit--calender.png") !important;
   background-repeat: no-repeat !important;
   background-position: 96% !important;
   background-size: 24px;
