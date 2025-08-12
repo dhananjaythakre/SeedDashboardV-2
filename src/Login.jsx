@@ -106,8 +106,8 @@ const Login = () => {
             </div>
           </div>
         </Col>
-        <Col xs={12} className="justify-content-center align-items-center text-center pt-3 text-white">
-         Powered by, itCraft Technologies.pvt.ltd.
+        <Col xs={12} className="justify-content-center align-items-center text-center pt-3 text-white copyright">
+         Powered by, itCraft Technologies.Pvt.Ltd.
         </Col>        
       </Row>
     </Container>
