@@ -130,6 +130,12 @@ button.new-user-button {
   border: none;
 }
 
+/* Copyright CSS */
+.copyright{
+  font-size:12px;
+  color:#fff;
+  padding:15px 0;
+}
 /*  Responsive CSS */
 @media screen and (max-width: 1599px) {
   .dashboard-container .lightgreenbg,
